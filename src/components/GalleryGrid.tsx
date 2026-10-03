@@ -47,7 +47,7 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ items, eventGroups, on
               <span className="absolute right-3 top-3 rounded-md bg-white/90 p-2 text-sky-800 shadow-sm" aria-hidden="true"><Maximize2 className="h-4 w-4" /></span>
             </div>
             <div className="p-6 flex flex-col flex-1">
-              <p className="flex items-center gap-2 text-xs text-slate-500"><Calendar className="w-3.5 h-3.5 text-sky-700" /><span>{item.date}</span></p>
+              {item.date && <p className="flex items-center gap-2 text-xs text-slate-500"><Calendar className="w-3.5 h-3.5 text-sky-700" /><span>{item.date}</span></p>}
               <h3 className="mt-3 text-base font-semibold text-[#003366] leading-snug">{item.eventGroup}</h3>
               <div className="mt-auto pt-4 border-t border-slate-100 space-y-3">
                 <button

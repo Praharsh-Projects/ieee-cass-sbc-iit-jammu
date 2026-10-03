@@ -68,5 +68,30 @@ const makeGalleryItems = (event: ChapterEvent): GalleryItem[] => {
   }));
 };
 
-export const GALLERY_ITEMS: GalleryItem[] = COMPLETED_EVENTS.flatMap(makeGalleryItems);
-export const GALLERY_EVENT_GROUPS = COMPLETED_EVENTS.map((event) => `${event.number} · ${event.title}`);
+const ARCHIVE_PHOTO_GROUP = 'Chapter Photo Archive';
+const archivePhotos = [
+  { file: 'event-1-01.jpg', altText: 'A speaker presenting a technical slide to the audience.' },
+  { file: 'event-1-02.jpg', altText: 'A speaker presenting a technical diagram.' },
+  { file: 'event-1-03.jpg', altText: 'A technical presentation about semiconductor trends.' },
+  { file: 'event-1-04.jpg', altText: 'A speaker presenting a research topic.' }
+];
+
+const archiveItems: GalleryItem[] = archivePhotos.map((photo, index) => ({
+  id: `archive-photo-${index + 1}`,
+  title: 'Chapter Photo Archive',
+  eventGroup: ARCHIVE_PHOTO_GROUP,
+  description: photo.altText,
+  accentColor: '#003366',
+  chipSubtitle: `ARCHIVE PHOTO ${index + 1} OF ${archivePhotos.length}`,
+  imageUrl: `/images/gallery/${photo.file}`,
+  altText: photo.altText
+}));
+
+export const GALLERY_ITEMS: GalleryItem[] = [
+  ...COMPLETED_EVENTS.flatMap(makeGalleryItems),
+  ...archiveItems
+];
+export const GALLERY_EVENT_GROUPS = [
+  ...COMPLETED_EVENTS.map((event) => `${event.number} · ${event.title}`),
+  ARCHIVE_PHOTO_GROUP
+];

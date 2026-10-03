@@ -236,7 +236,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   {item.chipSubtitle}
                 </span>
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white font-semibold">
-                  <span>{item.date}</span>
+                  {item.date && <span>{item.date}</span>}
                   <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                 </div>
               </div>

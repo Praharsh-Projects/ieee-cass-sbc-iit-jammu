@@ -64,7 +64,7 @@ export interface GalleryItem {
   id: string;
   title: string;
   eventGroup: string;
-  date: string;
+  date?: string;
   eventId?: string;
   description: string;
   accentColor: string;
