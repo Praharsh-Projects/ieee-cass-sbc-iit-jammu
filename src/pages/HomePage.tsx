@@ -16,8 +16,9 @@ interface HomePageProps {
 
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const [selectedFaculty, setSelectedFaculty] = useState<ChapterMember | null>(null);
-  // 3 Gallery preview items
-  const galleryPreview = GALLERY_ITEMS.slice(0, 3);
+  const galleryPreview = GALLERY_ITEMS.filter((item, index, items) =>
+    items.findIndex((candidate) => candidate.eventId === item.eventId) === index
+  ).slice(0, 3);
 
   return (
     <div className="home-page pb-16 sm:pb-24">
@@ -228,14 +229,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onNavigate('gallery'); } }}
               className="surface-card interactive-card p-6 cursor-pointer space-y-3"
             >
-              <div className="h-36 rounded-2xl bg-gradient-to-br from-sky-50 via-white to-blue-50/70 border border-sky-100 flex flex-col justify-between p-4 relative overflow-hidden">
-                <div className="absolute inset-0 pcb-grid opacity-30" />
-                <span className="relative z-10 text-[10px] font-sans font-bold text-sky-800 bg-white/90 px-2 py-0.5 rounded border border-sky-200 w-fit">
+              <div className="h-36 rounded-2xl border border-sky-100 relative overflow-hidden bg-slate-100">
+                {item.imageUrl && <img src={item.imageUrl} alt="" className="h-full w-full object-cover" loading="lazy" />}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-slate-950/20" aria-hidden="true" />
+                <span className="absolute left-3 top-3 text-[10px] font-sans font-bold text-[#003366] bg-white/90 px-2 py-1 rounded border border-white/70">
                   {item.chipSubtitle}
                 </span>
-                <div className="relative z-10 flex items-center justify-between text-xs text-[#003366] font-bold">
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white font-semibold">
                   <span>{item.date}</span>
-                  <ArrowUpRight className="w-4 h-4 text-sky-600" />
+                  <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                 </div>
               </div>
               <h3 className="text-base font-semibold text-[#003366] line-clamp-2">

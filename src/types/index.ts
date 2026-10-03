@@ -63,19 +63,14 @@ export interface ChapterMember {
 export interface GalleryItem {
   id: string;
   title: string;
-  eventGroup: 
-    | 'AI Hardware: Architectures and Design'
-    | 'Next-gen VLSI Ed-tech'
-    | 'Idea to Impact'
-    | 'Reconfigurable Nanotechnologies'
-    | 'Cyber-Secure Biological Systems'
-    | 'Other chapter activities';
+  eventGroup: string;
   date: string;
   eventId?: string;
   description: string;
   accentColor: string;
   chipSubtitle: string;
   imageUrl?: string;
+  altText?: string;
 }
 
 export interface ChapterStat {

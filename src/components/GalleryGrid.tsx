@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Maximize2, Calendar, Cpu, ArrowUpRight } from 'lucide-react';
+import { Maximize2, Calendar, ArrowUpRight } from 'lucide-react';
 import { GalleryItem } from '../types';
 import { GalleryModal } from './GalleryModal';
 
@@ -11,15 +11,7 @@ interface GalleryGridProps {
 export const GalleryGrid: React.FC<GalleryGridProps> = ({ items, onNavigateEvent }) => {
   const [selectedGroup, setSelectedGroup] = useState<string>('All');
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
-  const groups = [
-    'All',
-    'AI Hardware: Architectures and Design',
-    'Next-gen VLSI Ed-tech',
-    'Idea to Impact',
-    'Reconfigurable Nanotechnologies',
-    'Cyber-Secure Biological Systems',
-    'Other chapter activities'
-  ];
+  const groups = ['All', ...Array.from(new Set(items.map((item) => item.eventGroup)))];
   const filteredItems = selectedGroup === 'All' ? items : items.filter((item) => item.eventGroup === selectedGroup);
 
   return (
@@ -37,25 +29,22 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ items, onNavigateEvent
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredItems.map((item) => (
           <article key={item.id} className="gallery-card surface-card interactive-card group relative overflow-hidden flex flex-col h-full">
-            <div className="relative h-44 bg-gradient-to-br from-sky-50 to-white p-5 flex flex-col justify-between overflow-hidden border-b border-sky-100">
-              <div className="absolute inset-0 pcb-dot-grid opacity-30" aria-hidden="true" />
-              <span className="relative z-10 text-xs font-medium text-sky-800 leading-relaxed">{item.chipSubtitle}</span>
-              <div className="relative z-10 flex items-center gap-3">
-                <span className="p-3 rounded-xl bg-white border border-sky-100 text-sky-700"><Cpu className="w-6 h-6" /></span>
-                <Maximize2 className="w-4 h-4 ml-auto text-sky-700" aria-hidden="true" />
+            <div className="relative aspect-[4/3] overflow-hidden border-b border-sky-100 bg-slate-100">
+              {item.imageUrl && <img src={item.imageUrl} alt={item.altText ?? item.title} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy" />}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/75 to-transparent p-4 pt-12">
+                <span className="text-xs font-semibold text-white">{item.chipSubtitle}</span>
               </div>
+              <span className="absolute right-3 top-3 rounded-md bg-white/90 p-2 text-sky-800 shadow-sm" aria-hidden="true"><Maximize2 className="h-4 w-4" /></span>
             </div>
             <div className="p-6 flex flex-col flex-1">
               <p className="flex items-center gap-2 text-xs text-slate-500"><Calendar className="w-3.5 h-3.5 text-sky-700" /><span>{item.date}</span></p>
-              <h3 className="mt-3 text-base font-semibold text-[#003366] leading-snug">{item.title}</h3>
-              <p className="mt-3 mb-5 text-sm text-slate-600 leading-relaxed line-clamp-3">{item.description}</p>
+              <h3 className="mt-3 text-base font-semibold text-[#003366] leading-snug">{item.eventGroup}</h3>
               <div className="mt-auto pt-4 border-t border-slate-100 space-y-3">
-                <p className="text-xs text-slate-500">{item.eventGroup}</p>
                 <button
                   onClick={() => setActiveItem(item)}
-                  aria-label={'Enlarge artwork: ' + item.title}
+                  aria-label={`View ${item.chipSubtitle} from ${item.eventGroup}`}
                   className="stretched-action inline-flex items-center gap-2 min-h-[44px] text-sm font-semibold text-sky-700 group-hover:text-[#003366]"
-                >Enlarge Artwork<ArrowUpRight className="w-4 h-4" /></button>
+                >View Photo<ArrowUpRight className="w-4 h-4" /></button>
               </div>
             </div>
           </article>

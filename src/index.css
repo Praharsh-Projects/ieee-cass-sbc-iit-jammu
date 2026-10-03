@@ -91,7 +91,7 @@
   background: #009fe3;
 }
 
-.campus-banner { position: relative; width: 100%; aspect-ratio: 2 / 1; overflow: hidden; background: #e5f4fa; }
+.campus-banner { position: relative; width: 100%; aspect-ratio: 2.25 / 1; overflow: hidden; background: #e5f4fa; }
 .campus-photo { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .campus-banner-shade {
   position: absolute;

@@ -4,6 +4,7 @@ export const FACULTY_ADVISOR: ChapterMember = {
   id: 'faculty-ambika',
   name: 'Dr. Ambika Prasad Shah',
   position: 'Faculty Advisor',
+  email: 'ambika.shah@iitjammu.ac.in',
   roleType: 'Faculty',
   avatarInitials: 'AS',
   photoUrl: '/images/dr-ambika-prasad-shah.jpg',
@@ -122,63 +123,83 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   }
 ];
 
-const PREVIOUSLY_LISTED_STUDENT_OFFICERS: ChapterMember[] = [
+export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   {
-    id: 'archive-2024-aryan',
-    name: 'Aryan Kannaujiya',
-    position: 'Chair',
+    id: 'support-harshith',
+    name: 'Pulla Harshith',
+    position: 'Student Support',
     roleType: 'Core Student Leadership',
-    avatarInitials: 'AK',
-    department: 'Department of Electrical Engineering, IIT Jammu',
-    term: 'Previous Student Executive Board',
-    isCurrent: false,
-    bio: 'Oversaw chapter initiatives, research seminars, annual planning, and institutional coordination.'
+    avatarInitials: 'PH',
+    photoUrl: '/images/student-support-harshith.jpg',
+    department: 'M.Tech · VLSI Design · 1st Year',
+    email: '2026pvl0149@iitjammu.ac.in',
+    linkedinUrl: 'https://www.linkedin.com/in/harshith-pb02602280/?isSelfProfile=true',
+    term: 'Current student support',
+    isCurrent: true
   },
   {
-    id: 'archive-2024-shivam',
-    name: 'Shivam Bhardwaj',
-    position: 'Vice Chair',
+    id: 'support-yashaswi',
+    name: 'Nalamwar Yashaswi',
+    position: 'Student Support',
     roleType: 'Core Student Leadership',
-    avatarInitials: 'SB',
-    photoUrl: '/images/shivam-bhardwaj.jpg',
-    department: 'Indian Institute of Technology Jammu',
-    term: 'Previous Student Executive Board',
-    isCurrent: false,
-    statusNote: 'Elected at the Annual General Meeting (Pushkar Bhawan)',
-    bio: 'Supported chapter administration, workshop coordination, and technical session planning.'
+    avatarInitials: 'NY',
+    photoUrl: '/images/student-support-yashaswi.jpg',
+    department: 'M.Tech · VLSI Design · 1st Year',
+    email: '2026pvl0147@iitjammu.ac.in',
+    linkedinUrl: 'https://www.linkedin.com/in/nalamwar-yashaswi-8130b92b7',
+    term: 'Current student support',
+    isCurrent: true
   },
   {
-    id: 'archive-2024-susmita',
-    name: 'Susmita Ghanta',
-    position: 'Secretary',
+    id: 'support-rajan',
+    name: 'Rajan Thakur',
+    position: 'Student Support',
     roleType: 'Core Student Leadership',
-    avatarInitials: 'SG',
-    department: 'Indian Institute of Technology Jammu',
-    term: 'Previous Student Executive Board',
-    isCurrent: false,
-    bio: 'Managed chapter correspondence, official activity reporting, IEEE documentation, and member communications.'
+    avatarInitials: 'RT',
+    photoUrl: '/images/student-support-rajan.jpg',
+    department: 'M.Tech · VLSI Design · 1st Year',
+    email: '2026PVL0150@iitjammu.ac.in',
+    term: 'Current student support',
+    isCurrent: true
   },
   {
-    id: 'archive-2024-hemanth',
-    name: 'Hemanth Teeda',
-    position: 'Webmaster',
+    id: 'support-pavan',
+    name: 'Pavan Mandal',
+    position: 'Student Support',
     roleType: 'Core Student Leadership',
-    avatarInitials: 'HT',
-    department: 'Indian Institute of Technology Jammu',
-    term: 'Previous Student Executive Board',
-    isCurrent: false,
-    bio: 'Maintained chapter digital infrastructure, event portal, and online assets.'
+    avatarInitials: 'PM',
+    photoUrl: '/images/student-support-pavan.jpg',
+    department: 'M.Tech · VLSI Design · 1st Year',
+    email: '2026PVL0148@iitjammu.ac.in',
+    linkedinUrl: 'https://www.linkedin.com/in/pavan-mandal-7a7ba53b1',
+    term: 'Current student support',
+    isCurrent: true
   },
   {
-    id: 'archive-2024-abhay',
-    name: 'Abhay Gupta',
-    position: 'Treasurer',
+    id: 'support-vipin',
+    name: 'Vipin Kumar Patel',
+    position: 'Student Support',
     roleType: 'Core Student Leadership',
-    avatarInitials: 'AG',
-    department: 'Indian Institute of Technology Jammu',
-    term: 'Previous Student Executive Board',
-    isCurrent: false,
-    bio: 'Managed chapter budgeting and event finances.'
+    avatarInitials: 'VP',
+    photoUrl: '/images/student-support-vipin.jpg',
+    department: 'M.Tech · VLSI Design · 1st Year',
+    email: '2026PVL0156@iitjammu.ac.in',
+    linkedinUrl: 'https://www.linkedin.com/in/vipin-kumar-patel-90b786213',
+    term: 'Current student support',
+    isCurrent: true
+  },
+  {
+    id: 'support-lakshit',
+    name: 'Lakshit Jain',
+    position: 'Student Support',
+    roleType: 'Core Student Leadership',
+    avatarInitials: 'LJ',
+    photoUrl: '/images/student-support-lakshit.jpg',
+    department: 'M.Tech · VLSI Design · 1st Year',
+    email: '2026PVL0146@iitjammu.ac.in',
+    linkedinUrl: 'https://www.linkedin.com/in/lakshit-jain-a8382a201',
+    term: 'Current student support',
+    isCurrent: true
   }
 ];
 
@@ -189,6 +210,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
     position: 'Chairperson',
     roleType: 'Core Student Leadership',
     avatarInitials: 'AK',
+    photoUrl: '/images/past-aryan-kannaujiya.jpg',
     department: 'Ph.D. Scholar · VLSI Design · Electrical Engineering',
     term: 'Past IEEE Student Branch Chapter Leaders',
     isCurrent: false
@@ -199,6 +221,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
     position: 'Vice-Chairperson',
     roleType: 'Core Student Leadership',
     avatarInitials: 'PL',
+    photoUrl: '/images/past-pankaj-lodhi.jpg',
     department: 'Ph.D. Scholar · VLSI Design · Electrical Engineering',
     term: 'Past IEEE Student Branch Chapter Leaders',
     isCurrent: false
@@ -209,6 +232,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
     position: 'Secretary',
     roleType: 'Core Student Leadership',
     avatarInitials: 'AK',
+    photoUrl: '/images/past-abhay-kumar.jpg',
     department: 'M.Tech · VLSI Design · Electrical Engineering',
     term: 'Past IEEE Student Branch Chapter Leaders',
     isCurrent: false
@@ -219,6 +243,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
     position: 'Treasurer',
     roleType: 'Core Student Leadership',
     avatarInitials: 'SG',
+    photoUrl: '/images/past-susmitha-ghanta.jpg',
     department: 'M.Tech · VLSI Design · Electrical Engineering',
     term: 'Past IEEE Student Branch Chapter Leaders',
     isCurrent: false
@@ -229,33 +254,19 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
     position: 'Webmaster',
     roleType: 'Core Student Leadership',
     avatarInitials: 'TH',
+    photoUrl: '/images/past-teedha-hemanth-kumar.jpg',
     department: 'M.Tech · VLSI Design · Electrical Engineering',
     term: 'Past IEEE Student Branch Chapter Leaders',
     isCurrent: false
   }
 ];
 
-const FOUNDING_COMMITTEE: ChapterMember = {
-  id: 'founding-committee',
-  name: 'Founding Student Executive Committee',
-  position: 'Inaugural Chapter Formation Body',
-  roleType: 'Core Student Leadership',
-  avatarInitials: 'FC',
-  department: 'Department of Electrical Engineering, IIT Jammu',
-  term: '2024 Inaugural Term',
-  isCurrent: false,
-  bio: 'The inaugural student steering team drafted the chapter constitution, organized the founding AGM on November 19, 2024, and established IEEE CASS chapter SBC11545F at IIT Jammu.'
-};
-
-export const PREVIOUS_OFFICERS: ChapterMember[] = [
-  ...PREVIOUSLY_LISTED_STUDENT_OFFICERS,
-  ...PAST_CHAPTER_LEADERS,
-  FOUNDING_COMMITTEE
-];
+export const PREVIOUS_OFFICERS: ChapterMember[] = [...PAST_CHAPTER_LEADERS];
 
 export const ALL_MEMBERS: ChapterMember[] = [
   FACULTY_ADVISOR,
   FACULTY_CO_ADVISOR,
   ...CURRENT_STUDENT_OFFICERS,
+  ...CURRENT_STUDENT_SUPPORT,
   ...PREVIOUS_OFFICERS
 ];

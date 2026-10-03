@@ -3,7 +3,7 @@ import { ShieldCheck, Users, History, Lock, GraduationCap } from 'lucide-react';
 import { SectionHeader } from '../components/SectionHeader';
 import { MemberCard } from '../components/MemberCard';
 import { FacultyProfileModal } from '../components/FacultyProfileModal';
-import { FACULTY_ADVISOR, FACULTY_CO_ADVISOR, CURRENT_STUDENT_OFFICERS, PREVIOUS_OFFICERS, PAST_CHAPTER_LEADERS } from '../data/members';
+import { FACULTY_ADVISOR, FACULTY_CO_ADVISOR, CURRENT_STUDENT_OFFICERS, CURRENT_STUDENT_SUPPORT, PAST_CHAPTER_LEADERS } from '../data/members';
 import { ChapterMember } from '../types';
 import { SITE_CONFIG } from '../data/site';
 
@@ -53,6 +53,19 @@ export const MembersPage: React.FC = () => {
               ))}
             </div>
           </section>
+
+          <section aria-labelledby="student-support-heading" className="space-y-4">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-sky-800">
+              <Users className="h-4 w-4 text-sky-600" />
+              <h3 id="student-support-heading">Student Support</h3>
+            </div>
+            <p className="max-w-3xl text-sm leading-relaxed text-slate-600">M.Tech VLSI Design students supporting the chapter.</p>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {CURRENT_STUDENT_SUPPORT.map((member) => (
+                <MemberCard key={member.id} member={member} />
+              ))}
+            </div>
+          </section>
         </section>
 
         <section aria-labelledby="previous-leadership-heading" className="space-y-8 border-t border-sky-200 pt-8">
@@ -64,20 +77,8 @@ export const MembersPage: React.FC = () => {
             <span className="rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-xs text-slate-500">Archived terms</span>
           </div>
           <p className="max-w-3xl text-sm text-slate-600">
-            The previous student board and archived chapter leaders are listed below. The founding committee established the chapter’s constitution and inaugural operations for Chapter {SITE_CONFIG.chapterCode}.
+            Past chapter leaders are listed below with their roles and areas of study.
           </p>
-
-          <section aria-labelledby="previous-board-heading" className="space-y-4">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-600">
-              <History className="h-4 w-4" />
-              <h3 id="previous-board-heading">Previous Student Executive Board</h3>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {PREVIOUS_OFFICERS.filter((member) => member.id.startsWith('archive-')).map((member) => (
-                <MemberCard key={member.id} member={member} />
-              ))}
-            </div>
-          </section>
 
           <section aria-labelledby="past-chapter-leaders-heading" className="space-y-4">
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-600">
@@ -91,11 +92,6 @@ export const MembersPage: React.FC = () => {
             </div>
           </section>
 
-          {PREVIOUS_OFFICERS.filter((member) => member.id === 'founding-committee').map((member) => (
-            <div key={member.id} className="max-w-3xl mx-auto">
-              <MemberCard member={member} />
-            </div>
-          ))}
         </section>
 
         <aside className="surface-card mx-auto max-w-3xl space-y-2 p-6 text-center text-xs text-slate-500">
@@ -111,4 +107,3 @@ export const MembersPage: React.FC = () => {
     </>
   );
 };
-

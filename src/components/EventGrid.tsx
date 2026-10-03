@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ArrowUpDown, Filter, Search } from 'lucide-react';
+import { Filter, Search } from 'lucide-react';
 import { ChapterEvent } from '../types';
 import { EventCard } from './EventCard';
 import { EventModal } from './EventModal';
@@ -12,7 +12,6 @@ export const EventGrid: React.FC<EventGridProps> = ({ events }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedYear, setSelectedYear] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
   const [activeModalEvent, setActiveModalEvent] = useState<ChapterEvent | null>(null);
 
   const categories = ['All', 'AGM', 'Distinguished Lecture', 'Expert Talk', 'Workshop'];
@@ -32,13 +31,8 @@ export const EventGrid: React.FC<EventGridProps> = ({ events }) => {
         (e.venue && e.venue.toLowerCase().includes(q))
       );
     }
-    result.sort((a, b) => {
-      const dateA = new Date(a.isoDate).getTime();
-      const dateB = new Date(b.isoDate).getTime();
-      return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
-    });
     return result;
-  }, [events, selectedCategory, selectedYear, searchQuery, sortOrder]);
+  }, [events, selectedCategory, selectedYear, searchQuery]);
 
   const resetFilters = () => {
     setSelectedCategory('All');
@@ -85,10 +79,6 @@ export const EventGrid: React.FC<EventGridProps> = ({ events }) => {
                 >{year}</button>
               ))}
             </div>
-            <button onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')} className="button-secondary min-h-[44px] px-4 py-2 text-xs" aria-label="Toggle chronological sorting">
-              <ArrowUpDown className="w-4 h-4" />
-              <span>{sortOrder === 'desc' ? 'Newest First' : 'Oldest First'}</span>
-            </button>
           </div>
         </div>
       </div>
