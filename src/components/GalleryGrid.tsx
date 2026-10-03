@@ -5,14 +5,17 @@ import { GalleryModal } from './GalleryModal';
 
 interface GalleryGridProps {
   items: GalleryItem[];
+  eventGroups: string[];
   onNavigateEvent?: (eventId: string) => void;
 }
 
-export const GalleryGrid: React.FC<GalleryGridProps> = ({ items, onNavigateEvent }) => {
+export const GalleryGrid: React.FC<GalleryGridProps> = ({ items, eventGroups, onNavigateEvent }) => {
   const [selectedGroup, setSelectedGroup] = useState<string>('All');
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
-  const groups = ['All', ...Array.from(new Set(items.map((item) => item.eventGroup)))];
+  const groups = ['All', ...eventGroups];
   const filteredItems = selectedGroup === 'All' ? items : items.filter((item) => item.eventGroup === selectedGroup);
+  const emptyGroups = eventGroups.filter((group) => !items.some((item) => item.eventGroup === group));
+  const visibleEmptyGroups = selectedGroup === 'All' ? emptyGroups : emptyGroups.filter((group) => group === selectedGroup);
 
   return (
     <div className="space-y-8">
@@ -27,6 +30,13 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ items, onNavigateEvent
         ))}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {visibleEmptyGroups.map((group) => (
+          <article key={`empty-${group}`} className="surface-card flex flex-col justify-center p-6 sm:p-8 min-h-56" aria-label={`${group}, no photos available`}>
+            <p className="eyebrow">GALLERY ARCHIVE</p>
+            <h2 className="mt-3 text-lg font-bold leading-snug text-[#003366]">{group}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600">No photos are available for this event yet.</p>
+          </article>
+        ))}
         {filteredItems.map((item) => (
           <article key={item.id} className="gallery-card surface-card interactive-card group relative overflow-hidden flex flex-col h-full">
             <div className="relative aspect-[4/3] overflow-hidden border-b border-sky-100 bg-slate-100">

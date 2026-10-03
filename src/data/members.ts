@@ -133,7 +133,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
     photoUrl: '/images/student-support-harshith.jpg',
     department: 'M.Tech · VLSI Design · 1st Year',
     email: '2026pvl0149@iitjammu.ac.in',
-    linkedinUrl: 'https://www.linkedin.com/in/harshith-pb02602280/?isSelfProfile=true',
+    linkedinUrl: 'https://www.linkedin.com/in/harshith-p-b02602280',
     term: 'Current student support',
     isCurrent: true
   },
