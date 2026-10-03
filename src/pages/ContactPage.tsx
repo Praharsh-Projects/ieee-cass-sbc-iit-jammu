@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Send, CheckCircle2, Clock, Landmark, MessageSquare, ExternalLink, AlertCircle, Phone, User, Mail, CreditCard } from 'lucide-react';
 import { SectionHeader } from '../components/SectionHeader';
 import { SITE_CONFIG } from '../data/site';
+import { buildChapterContactMailto } from '../utils/contact';
 
 export const ContactPage: React.FC = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -39,6 +40,14 @@ export const ContactPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
+      window.location.href = buildChapterContactMailto({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        membershipId: formData.membershipId,
+        subject: 'Contact form inquiry',
+        message: formData.message,
+      });
       setFormSubmitted(true);
     }
   };
@@ -115,6 +124,18 @@ export const ContactPage: React.FC = () => {
 
               <div className="flex items-start gap-3.5">
                 <div className="p-2 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <div>
+                  <strong className="block text-[#003366] font-bold mb-0.5">Chapter Email</strong>
+                  <a href={`mailto:${SITE_CONFIG.contactEmail}`} className="text-sky-700 hover:text-sky-900 underline underline-offset-2 break-all">
+                    {SITE_CONFIG.contactEmail}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3.5">
+                <div className="p-2 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
                   <Landmark className="w-4 h-4" />
                 </div>
                 <div>
@@ -155,7 +176,7 @@ export const ContactPage: React.FC = () => {
                 <MessageSquare className="w-4 h-4 text-sky-600" />
                 <h2 className="text-lg font-bold text-[#003366]">Send an Inquiry</h2>
               </div>
-              <span className="metadata-badge text-xs">Local preview</span>
+              <span className="metadata-badge text-xs">Email inquiry</span>
             </div>
 
             {formSubmitted ? (
@@ -163,16 +184,29 @@ export const ContactPage: React.FC = () => {
                 <div className="w-16 h-16 mx-auto rounded-full bg-sky-50 border-2 border-sky-400 flex items-center justify-center text-sky-600">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-[#003366]">Inquiry Preview Ready</h3>
+                <h3 className="text-2xl font-bold text-[#003366]">Email Draft Prepared</h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto">
-                  Your inquiry has passed validation. You can compose another draft below.
+                  Your email app should open with a draft addressed to {SITE_CONFIG.contactEmail}. Review it and press Send to deliver your inquiry.
                 </p>
-                <div className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-800 max-w-md mx-auto text-left flex items-start gap-2">
+                <div className="p-3 rounded-xl bg-sky-50 border border-sky-200 text-xs text-sky-800 max-w-md mx-auto text-left flex items-start gap-2">
                   <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
                   <span>
-                    This is a local preview. Your inquiry stays in this browser and has not been sent to the chapter.
+                    Email is sent only after you send the prepared message from your email app.
                   </span>
                 </div>
+                <a
+                  href={buildChapterContactMailto({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    membershipId: formData.membershipId,
+                    subject: 'Contact form inquiry',
+                    message: formData.message,
+                  })}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-sm font-bold text-white transition-colors"
+                >
+                  <Mail className="w-4 h-4" /> Open Email Draft
+                </a>
                 <button
                   onClick={() => {
                     setFormSubmitted(false);
@@ -190,7 +224,7 @@ export const ContactPage: React.FC = () => {
                 <div className="p-3 rounded-xl bg-sky-50 border border-sky-200 text-xs text-sky-800 flex items-start gap-2">
                   <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-sky-600" />
                   <span>
-                    Preview your inquiry here. This form currently validates your details locally without sending a message.
+                    Submitting opens an email draft addressed to <a className="font-semibold underline underline-offset-2" href={`mailto:${SITE_CONFIG.contactEmail}`}>{SITE_CONFIG.contactEmail}</a>. Review and send it from your email app.
                   </span>
                 </div>
 
@@ -315,7 +349,7 @@ export const ContactPage: React.FC = () => {
                   className="button-primary w-full sm:w-auto"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Preview Inquiry</span>
+                  <span>Prepare Email</span>
                 </button>
               </form>
             )}

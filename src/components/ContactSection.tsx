@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { MapPin, Send, CheckCircle2, Clock, Landmark, MessageSquare } from 'lucide-react';
+import { MapPin, Send, CheckCircle2, Clock, Landmark, MessageSquare, Mail } from 'lucide-react';
 import { SectionHeader } from './SectionHeader';
+import { SITE_CONFIG } from '../data/site';
+import { buildChapterContactMailto } from '../utils/contact';
 
 export const ContactSection: React.FC = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -13,7 +15,8 @@ export const ContactSection: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
+    if (formData.name.trim() && formData.email.trim() && formData.message.trim()) {
+      window.location.href = buildChapterContactMailto(formData);
       setFormSubmitted(true);
     }
   };
@@ -77,6 +80,16 @@ export const ContactSection: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3.5">
+                <Mail className="w-5 h-5 text-sky-600 shrink-0 mt-1" />
+                <div>
+                  <strong className="block text-[#003366] font-bold mb-0.5">Chapter Email</strong>
+                  <a href={`mailto:${SITE_CONFIG.contactEmail}`} className="text-sky-700 hover:text-sky-900 underline underline-offset-2 break-all">
+                    {SITE_CONFIG.contactEmail}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3.5">
                 <Landmark className="w-5 h-5 text-sky-600 shrink-0 mt-1" />
                 <div>
                   <strong className="block text-[#003366] font-bold mb-0.5">Affiliation Network</strong>
@@ -114,10 +127,17 @@ export const ContactSection: React.FC = () => {
                 <div className="w-16 h-16 mx-auto rounded-full bg-sky-50 border-2 border-sky-400 flex items-center justify-center text-sky-600">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-extrabold text-[#003366]">Message Transmitted</h3>
+                <h3 className="text-2xl font-extrabold text-[#003366]">Email Draft Prepared</h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto">
-                  Thank you for reaching out to IEEE CASS SBC IIT Jammu. Your inquiry has been forwarded to the chapter executive committee.
+                  Your email app should open with a draft addressed to {SITE_CONFIG.contactEmail}. Review it and press Send to deliver your inquiry.
                 </p>
+                <p className="text-xs text-slate-500">Email is sent only after you send the prepared message from your email app.</p>
+                <a
+                  href={buildChapterContactMailto(formData)}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-sm font-bold text-white transition-colors"
+                >
+                  <Mail className="w-4 h-4" /> Open Email Draft
+                </a>
                 <button
                   onClick={() => {
                     setFormSubmitted(false);
@@ -204,7 +224,7 @@ export const ContactSection: React.FC = () => {
                   className="w-full sm:w-auto px-8 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-[#0088C2] hover:from-sky-600 hover:to-sky-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-sky-500/20 transition-all focus:outline-none focus:ring-2 focus:ring-sky-400"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Transmit Message</span>
+                  <span>Prepare Email</span>
                 </button>
               </form>
             )}

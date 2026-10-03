@@ -4,6 +4,7 @@ export const SITE_CONFIG = {
   institution: 'Indian Institute of Technology Jammu',
   institutionShort: 'IIT Jammu',
   chapterCode: 'SBC11545F',
+  contactEmail: '2026pvl0149@iitjammu.ac.in',
   region: 'Region 10',
   section: 'IEEE Delhi Section',
   foundedYear: 2024,

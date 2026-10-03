@@ -54,6 +54,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => (
 
         <div className="space-y-4">
           <h2 className="footer-heading">Connect with us</h2>
+          <a href={`mailto:${SITE_CONFIG.contactEmail}`} className="inline-flex items-center gap-2 text-sky-200 hover:text-white underline underline-offset-4 break-all">
+            {SITE_CONFIG.contactEmail}
+            <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+          </a>
           <ul className="space-y-2">
             <li><button onClick={() => onNavigate('contact')} className="footer-link text-sky-200 font-semibold">Join IEEE SBC IIT Jammu <ArrowUpRight className="w-3.5 h-3.5" /></button></li>
             <li><a href={SITE_CONFIG.officialLinks.iitjammu} target="_blank" rel="noopener noreferrer" className="footer-link">IIT Jammu <ArrowUpRight className="w-3.5 h-3.5" /></a></li>
