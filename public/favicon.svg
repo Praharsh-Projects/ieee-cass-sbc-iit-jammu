@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="22" fill="#FFFFFF"/>
+  <rect x="2" y="2" width="96" height="96" rx="20" stroke="#009FE3" stroke-width="3"/>
+  
+  <!-- Subtle Circuit Traces in Sky Blue -->
+  <path d="M15 50 H30 L40 35 H60 L70 50 H85" stroke="#009FE3" stroke-width="3" stroke-linecap="round"/>
+  <path d="M20 28 H38 L48 18 H65" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M25 72 H45 L55 62 H78" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Central Microchip Icon in IIT Jammu Blue -->
+  <rect x="34" y="34" width="32" height="32" rx="8" fill="#F0F9FF" stroke="#003366" stroke-width="2.5"/>
+  <circle cx="50" cy="50" r="7" fill="#009FE3"/>
+  
+  <!-- Pin Nodes -->
+  <circle cx="15" cy="50" r="4" fill="#003366"/>
+  <circle cx="85" cy="50" r="4" fill="#003366"/>
+  <circle cx="65" cy="18" r="3.5" fill="#009FE3"/>
+  <circle cx="25" cy="72" r="3.5" fill="#009FE3"/>
+  <circle cx="78" cy="62" r="3.5" fill="#003366"/>
+</svg>
