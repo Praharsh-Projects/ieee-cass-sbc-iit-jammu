@@ -91,7 +91,3 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   ...COMPLETED_EVENTS.flatMap(makeGalleryItems),
   ...archiveItems
 ];
-export const GALLERY_EVENT_GROUPS = [
-  ...COMPLETED_EVENTS.map((event) => `${event.number} · ${event.title}`),
-  IMAGE_GALLERY_GROUP
-];
