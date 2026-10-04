@@ -207,7 +207,7 @@
 .member-role { border: 1px solid #c3e0ee; border-radius: 999px; padding: 5px 14px; background: #eaf6fc; color: #075985; font-weight: 600; font-size: 12px; }
 .past-member-card .member-role { color: #475569; border-color: #cbd5e1; background: #e9eef3; }
 .member-portrait { position: relative; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 50%; background: #e6f2fa; border: 3px solid white; outline: 1px solid #c5dfec; box-shadow: 0 3px 12px rgba(0,51,102,.06); }
-.member-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: center; }
+.member-portrait img { position: absolute; top: 50%; left: 50%; display: block; max-width: none; height: auto; }
 .member-contact, .profile-contact { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; border-radius: 8px; font-size: 12px; font-weight: 600; color: #075985; }
 .member-contact { padding: 0 10px; background: #f0f9ff; }
 .member-contact:hover, .profile-contact:hover { background: #dfeff9; }
@@ -217,6 +217,17 @@
 .profile-contact { width: 100%; font-size: 12px; }
 .profile-detail { border: 1px solid #dbe9f2; background: #f6fbff; padding: 16px; border-radius: 12px; }
 .profile-experience { border-left: 3px solid #18a3b5; padding: 14px 18px; border-radius: 0 12px 12px 0; background: #f2f8fc; }
+.contact-info-card { background: linear-gradient(145deg, #edf7ff, #dceeff); border-color: #a6cbed; box-shadow: 0 8px 24px rgba(0, 76, 142, .07); }
+.contact-info-card h3, .contact-info-card strong { color: #063f78; }
+.contact-info-card .text-slate-500 { color: #38698f; }
+.contact-info-card .text-slate-600 { color: #24577e; }
+.contact-info-card .text-slate-800 { color: #143f6b; }
+.contact-info-card .text-sky-700 { color: #075aa4; }
+.contact-info-card svg { color: #0769ba; }
+.contact-info-card a:hover { color: #003e7c; }
+.contact-info-card .contact-info-divider { border-color: #bdd8ef; }
+.contact-info-card .contact-info-icon { background: #f4faff; border-color: #b8d7f0; box-shadow: 0 2px 6px rgba(0, 79, 143, .04); }
+.contact-info-card .contact-info-details { background: #f0f8ff; border-color: #b6d5ee; }
 .research-area { display: flex; align-items: center; gap: 16px; padding: 18px; background: white; border: 1px solid #d5e6ef; border-radius: 14px; font-size: 14px; font-weight: 600; color: #003366; }
 .research-area-number { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px; color: #0f766e; background: #e6f7f6; font-size: 12px; }
 .album-toolbar { background: linear-gradient(130deg, #edf7ff, #f1fbfb); }

@@ -68,10 +68,10 @@ export const ContactPage: React.FC = () => {
         
         {/* LEFT COLUMN: Chapter Contact Information (5 Cols) */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="surface-card p-5 sm:p-8 space-y-6">
+          <div className="surface-card contact-info-card p-5 sm:p-8 space-y-6">
             
             {/* Header with Emblem */}
-            <div className="flex items-center gap-4 pb-4 border-b border-sky-100">
+            <div className="contact-info-divider flex items-center gap-4 pb-4 border-b border-sky-100">
               <div className="w-14 h-14 rounded-2xl bg-white border border-sky-200 p-1 flex items-center justify-center shadow-xs shrink-0">
                 <img
                   src="/images/iit-jammu-logo.png"
@@ -95,7 +95,7 @@ export const ContactPage: React.FC = () => {
             {/* Contact Details List */}
             <div className="space-y-5 text-sm">
               <div className="flex items-start gap-3.5">
-                <div className="p-2 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
+                <div className="contact-info-icon p-2 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
@@ -110,7 +110,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3.5">
-                <div className="p-2 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
+                <div className="contact-info-icon p-2 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
                   <Clock className="w-4 h-4" />
                 </div>
                 <div>
@@ -123,7 +123,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3.5">
-                <div className="p-2 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
+                <div className="contact-info-icon p-2 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
@@ -135,7 +135,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3.5">
-                <div className="p-2 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
+                <div className="contact-info-icon p-2 rounded-xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
                   <Landmark className="w-4 h-4" />
                 </div>
                 <div>
@@ -149,7 +149,7 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* GPS & Quick Venue Coordinates */}
-            <div className="p-4 rounded-2xl bg-sky-50/70 border border-sky-200 space-y-2 font-sans text-xs">
+            <div className="contact-info-details p-4 rounded-2xl bg-sky-50/70 border border-sky-200 space-y-2 font-sans text-xs">
               <div className="info-row text-slate-600">
                 <span>GPS COORDINATES:</span>
                 <span className="text-sky-700 font-bold">{SITE_CONFIG.campusAddress.coordinates.latitude}, {SITE_CONFIG.campusAddress.coordinates.longitude}</span>
@@ -220,14 +220,6 @@ export const ContactPage: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6" noValidate aria-label="Chapter inquiry form">
                 
-                {/* Notice regarding backend */}
-                <div className="p-3 rounded-xl bg-sky-50 border border-sky-200 text-xs text-sky-800 flex items-start gap-2">
-                  <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-sky-600" />
-                  <span>
-                    Submitting opens an email draft addressed to <a className="font-semibold underline underline-offset-2" href={`mailto:${SITE_CONFIG.contactEmail}`}>{SITE_CONFIG.contactEmail}</a>. Review and send it from your email app.
-                  </span>
-                </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name Field */}
                   <div className="space-y-1.5">

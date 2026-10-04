@@ -33,7 +33,7 @@ export const ContactSection: React.FC = () => {
         
         {/* Left: Institutional Information & Location (5 Cols) */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="rounded-3xl bg-white border border-sky-200 p-6 sm:p-8 space-y-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="contact-info-card rounded-3xl bg-white border border-sky-200 p-6 sm:p-8 space-y-6 shadow-sm hover:shadow-md transition-shadow">
             
             <div className="flex items-center gap-4">
               <img
@@ -54,7 +54,7 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="space-y-4 pt-4 border-t border-sky-100 text-sm">
+            <div className="contact-info-divider space-y-4 pt-4 border-t border-sky-100 text-sm">
               <div className="flex items-start gap-3.5">
                 <MapPin className="w-5 h-5 text-sky-600 shrink-0 mt-1" />
                 <div>
@@ -102,7 +102,7 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Stylized Campus Map Coordinates Card */}
-            <div className="p-4 rounded-2xl bg-sky-50/70 border border-sky-200 space-y-2 font-sans text-xs">
+            <div className="contact-info-details p-4 rounded-2xl bg-sky-50/70 border border-sky-200 space-y-2 font-sans text-xs">
               <div className="flex justify-between text-slate-600">
                 <span>GPS COORDINATES:</span>
                 <span className="text-sky-700 font-bold">32.7984° N, 74.8967° E</span>

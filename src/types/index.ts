@@ -55,9 +55,9 @@ export interface ChapterMember {
   email?: string;
   linkedinUrl?: string;
   portrait?: {
-    objectPosition: string;
+    // Face center in the original photo, independent of the circular frame size.
+    focalPoint: { x: number; y: number };
     scale?: number;
-    translateY?: string;
   };
   profile?: {
     introduction: string;

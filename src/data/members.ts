@@ -13,7 +13,7 @@ export const FACULTY_ADVISOR: ChapterMember = {
   term: '2024 – Present',
   isCurrent: true,
   bio: 'Faculty Advisor, IEEE CASS Student Branch Chapter',
-  portrait: { objectPosition: '50% 32%', scale: 1.08 },
+  portrait: { focalPoint: { x: 58.4, y: 40 }, scale: 1.18 },
   profile: {
     introduction: 'Assistant Professor, Electrical Engineering Department · Faculty Advisor, IEEE CASS SBC',
     highlights: [
@@ -38,7 +38,7 @@ export const FACULTY_COUNSELLOR: ChapterMember = {
   term: '2024 – Present',
   isCurrent: true,
   bio: 'Faculty Counsellor, Department of Electrical Engineering',
-  portrait: { objectPosition: '50% 8%', scale: 1.1, translateY: '7%' },
+  portrait: { focalPoint: { x: 46, y: 25.8 }, scale: 1.7 },
   profile: {
     introduction: 'Associate Professor · Department of Electrical Engineering · Faculty Counsellor, 2024–Present',
     highlights: [
@@ -59,7 +59,7 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   {
     id: 'student-shivam',
     profile: STUDENT_PROFILES['student-shivam'],
-    portrait: { objectPosition: '50% 42%', scale: 1.04 },
+    portrait: { focalPoint: { x: 50.5, y: 43.2 }, scale: 1.15 },
     name: 'Shivam Bhardwaj',
     position: 'Chair',
     roleType: 'Core Student Leadership',
@@ -75,12 +75,12 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   {
     id: 'student-sachin',
     profile: STUDENT_PROFILES['student-sachin'],
-    portrait: { objectPosition: '50% 26%', scale: 1.65, translateY: '15%' },
+    portrait: { focalPoint: { x: 49.8, y: 38.2 }, scale: 1.45 },
     name: 'Sachin Sharma',
     position: 'Vice Chair',
     roleType: 'Core Student Leadership',
     avatarInitials: 'SS',
-    photoUrl: '/images/sachin-sharma.png',
+    photoUrl: '/images/sachin-sharma.jpg',
     department: 'Ph.D. Scholar · VLSI Design · Electrical Engineering',
     email: '2023ree2021@iitjammu.ac.in',
     linkedinUrl: 'https://www.linkedin.com/in/sachin-sharma-ln/',
@@ -91,7 +91,7 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   {
     id: 'student-sandeep',
     profile: STUDENT_PROFILES['student-sandeep'],
-    portrait: { objectPosition: '50% 35%' },
+    portrait: { focalPoint: { x: 50.5, y: 41.5 }, scale: 1 },
     name: 'Sandeep Kour',
     position: 'Secretary',
     roleType: 'Core Student Leadership',
@@ -107,7 +107,7 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   {
     id: 'student-ubair',
     profile: STUDENT_PROFILES['student-ubair'],
-    portrait: { objectPosition: '50% 32%' },
+    portrait: { focalPoint: { x: 49.3, y: 42.8 }, scale: 1 },
     name: 'Ubair Ali',
     position: 'Treasurer',
     roleType: 'Core Student Leadership',
@@ -123,7 +123,7 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   {
     id: 'student-sourabh',
     profile: STUDENT_PROFILES['student-sourabh'],
-    portrait: { objectPosition: '50% 32%', scale: 1.12 },
+    portrait: { focalPoint: { x: 49.6, y: 41.6 }, scale: 1.4 },
     name: 'Sourabh Goswami',
     position: 'Webmaster',
     roleType: 'Core Student Leadership',
@@ -141,7 +141,7 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
 export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   {
     id: 'support-harshith',
-    portrait: { objectPosition: '50% 36%' },
+    portrait: { focalPoint: { x: 50, y: 34.3 }, scale: 1.32 },
     name: 'Pulla Harshith',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -155,7 +155,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   },
   {
     id: 'support-yashaswi',
-    portrait: { objectPosition: '50% 30%' },
+    portrait: { focalPoint: { x: 51, y: 37.4 }, scale: 1.16 },
     name: 'Nalamwar Yashaswi',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -169,7 +169,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   },
   {
     id: 'support-rajan',
-    portrait: { objectPosition: '50% 30%' },
+    portrait: { focalPoint: { x: 51.5, y: 39.5 }, scale: 1.12 },
     name: 'Rajan Thakur',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -182,7 +182,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   },
   {
     id: 'support-pavan',
-    portrait: { objectPosition: '50% 35%' },
+    portrait: { focalPoint: { x: 50.5, y: 46 }, scale: 1.17 },
     name: 'Pavan Mandal',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -196,7 +196,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   },
   {
     id: 'support-vipin',
-    portrait: { objectPosition: '50% 30%' },
+    portrait: { focalPoint: { x: 52.2, y: 38.5 }, scale: 1 },
     name: 'Vipin Kumar Patel',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -210,7 +210,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   },
   {
     id: 'support-lakshit',
-    portrait: { objectPosition: '50% 32%' },
+    portrait: { focalPoint: { x: 49.8, y: 36.5 }, scale: 1.4 },
     name: 'Lakshit Jain',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -227,7 +227,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
 export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
   {
     id: 'past-aryan',
-    portrait: { objectPosition: '50% 50%' },
+    portrait: { focalPoint: { x: 48.7, y: 42.1 }, scale: 1.1 },
     name: 'Aryan Kannaujiya',
     position: 'Chairperson',
     roleType: 'Core Student Leadership',
@@ -239,7 +239,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
   },
   {
     id: 'past-pankaj',
-    portrait: { objectPosition: '50% 50%' },
+    portrait: { focalPoint: { x: 49.3, y: 43.5 }, scale: 1.2 },
     name: 'Pankaj Lodhi',
     position: 'Vice-Chairperson',
     roleType: 'Core Student Leadership',
@@ -251,7 +251,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
   },
   {
     id: 'past-abhay-kumar',
-    portrait: { objectPosition: '50% 50%' },
+    portrait: { focalPoint: { x: 50.4, y: 48 }, scale: 1.08 },
     name: 'Abhay Kumar',
     position: 'Secretary',
     roleType: 'Core Student Leadership',
@@ -263,7 +263,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
   },
   {
     id: 'past-susmitha',
-    portrait: { objectPosition: '50% 50%' },
+    portrait: { focalPoint: { x: 49.5, y: 49.8 }, scale: 1.05 },
     name: 'Susmitha Ghanta',
     position: 'Treasurer',
     roleType: 'Core Student Leadership',
@@ -275,7 +275,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
   },
   {
     id: 'past-teedha',
-    portrait: { objectPosition: '50% 50%' },
+    portrait: { focalPoint: { x: 50.1, y: 51.5 }, scale: 1.08 },
     name: 'Teedha Hemanth Kumar',
     position: 'Webmaster',
     roleType: 'Core Student Leadership',
