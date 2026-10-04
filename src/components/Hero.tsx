@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Cpu, Users, Binary, ShieldCheck } from 'lucide-react';
 import { NavPage } from '../types';
 import { SITE_CONFIG } from '../data/site';
-import { ChapterLogo } from './ChapterLogo';
+import { CampusSlideshow } from './CampusSlideshow';
 
 interface HeroProps {
   onNavigate: (tab: NavPage) => void;
@@ -10,17 +10,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onNavigate }) => (
   <section className="relative">
-    <div className="campus-banner">
-      <img
-        src="/images/iit-jammu-campus-enhanced.png"
-        alt="Aerial view of the IIT Jammu campus, surrounded by green hills"
-        width={1774}
-        height={887}
-        className="campus-photo"
-      />
-      <div className="campus-banner-shade" aria-hidden="true" />
-      <ChapterLogo className="campus-banner-logo" />
-    </div>
+    <CampusSlideshow />
 
     <div className="hero-introduction">
       <div className="site-container text-center">

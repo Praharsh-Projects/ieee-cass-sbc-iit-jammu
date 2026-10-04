@@ -9,7 +9,7 @@ export const GalleryPage: React.FC = () => (
       level="h1"
       badge="ACTIVITY ARCHIVE"
       title="Gallery"
-      subtitle="Photos and event materials from IEEE CASS activities at IIT Jammu."
+      subtitle="Explore albums of technical talks, workshops, and moments from our chapter."
     />
     <GalleryGrid items={GALLERY_ITEMS} />
   </div>

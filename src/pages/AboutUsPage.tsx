@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cpu, Compass, Shield, Terminal, Binary, Microscope, Globe, Users, Award, ExternalLink, Sparkles, Building } from 'lucide-react';
 import { SectionHeader } from '../components/SectionHeader';
-import { SITE_CONFIG } from '../data/site';
+import { SITE_CONFIG, RESEARCH_AREAS } from '../data/site';
 
 export const AboutUsPage: React.FC = () => {
   return (
@@ -268,6 +268,12 @@ export const AboutUsPage: React.FC = () => {
             </a>
           </div>
         </div>
+        <section aria-labelledby="research-areas-heading" className="pt-5 space-y-5">
+          <h3 id="research-areas-heading" className="subsection-heading">Research Areas</h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {RESEARCH_AREAS.map((area, index) => <li key={area} className="research-area"><span className="research-area-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><span>{area}</span></li>)}
+          </ul>
+        </section>
       </section>
 
     </div>

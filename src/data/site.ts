@@ -31,9 +31,9 @@ export const SITE_CONFIG = {
   },
   ecosystem: {
     labName: 'IC-ResQ Lab',
-    labFullName: 'Integrated Circuits - Reliability, Security and Quality (IC-ResQ) Research Lab',
+    labFullName: 'Integrated Circuit Reliability, Security, and Quality Laboratory',
     labHead: 'Dr. Ambika Prasad Shah',
-    labUrl: 'https://sites.google.com/iitjammu.ac.in/ic-resq'
+    labUrl: 'https://www.ic-resq.com/'
   },
   officialLinks: {
     ieee: 'https://www.ieee.org/',
@@ -43,3 +43,14 @@ export const SITE_CONFIG = {
   },
   copyright: '© 2026 IEEE CASS SBC IIT Jammu – All rights reserved.'
 };
+
+export const RESEARCH_AREAS = [
+  'Design for Circuit Reliability and Aging Tolerance',
+  'Energy-efficient Circuits for Edge Computing',
+  'Circuits and Systems for Biomedical Applications',
+  'Low-power High-performance Circuit Designs',
+  'Circuits for Hardware Security Primitives',
+  'Radiation Hardened Circuit Designs',
+  'Side-channel Attack Resilient Memory',
+  'Secure Cyber-Physical Systems',
+];

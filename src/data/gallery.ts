@@ -1,4 +1,4 @@
-import { ChapterEvent, GalleryItem } from '../types';
+import { ChapterEvent, GalleryAlbum, GalleryItem } from '../types';
 import { COMPLETED_EVENTS } from './events';
 
 const eventPhotos: Record<string, { accentColor: string; photos: { file: string; altText: string }[] }> = {
@@ -91,3 +91,15 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   ...COMPLETED_EVENTS.flatMap(makeGalleryItems),
   ...archiveItems
 ];
+
+export const getGalleryAlbums = (items: GalleryItem[]): GalleryAlbum[] => {
+  const albums = new Map<string, GalleryAlbum>();
+  for (const item of items) {
+    if (!item.imageUrl) continue;
+    const id = item.eventId ?? item.eventGroup;
+    const album = albums.get(id);
+    if (album) album.photos.push(item);
+    else albums.set(id, { id, title: item.eventGroup, date: item.date, photos: [item] });
+  }
+  return [...albums.values()];
+};

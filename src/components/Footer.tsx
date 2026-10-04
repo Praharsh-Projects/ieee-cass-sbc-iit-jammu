@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { NavPage } from '../types';
 import { SITE_CONFIG } from '../data/site';
+import { ChapterLogo } from './ChapterLogo';
 
 interface FooterProps {
   onNavigate: (tab: NavPage) => void;
@@ -17,18 +18,18 @@ const navigation: { page: NavPage; label: string }[] = [
 ];
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => (
-  <footer className="relative z-10 bg-[#002244] text-slate-300 text-sm">
+  <footer className="site-footer relative z-10 text-slate-300 text-sm">
     <div className="bg-white border-y border-slate-200">
       <div className="site-container">
-        <div className="grid grid-cols-2 sm:grid-cols-4 items-center gap-6 sm:gap-10 max-w-4xl mx-auto py-8 sm:py-10" aria-label="Chapter affiliations">
+        <div className="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-4 items-center gap-6 sm:gap-8 py-8 sm:py-10" aria-label="Chapter affiliations">
           <a href={SITE_CONFIG.officialLinks.iitjammu} target="_blank" rel="noopener noreferrer" className="affiliation-logo" aria-label="IIT Jammu official website">
-            <img src="/images/iit-jammu-logo.png" alt="IIT Jammu" loading="lazy" className="h-24 sm:h-28 w-full object-contain" />
+            <img src="/images/iit-jammu-wordmark.png" alt="Indian Institute of Technology Jammu — भारतीय प्रौद्योगिकी संस्थान जम्मू" loading="lazy" className="h-24 w-full object-contain" />
           </a>
           <a href={SITE_CONFIG.ecosystem.labUrl} target="_blank" rel="noopener noreferrer" className="affiliation-logo" aria-label="IC-ResQ Lab website">
-            <img src="/images/ic-resq-lab-logo.png" alt="IC-ResQ Lab, IIT Jammu" loading="lazy" className="h-28 sm:h-32 w-full object-contain" />
+            <img src="/images/ic-resq-wordmark.png" alt="IC-ResQ — Integrated Circuit Reliability, Security, and Quality Laboratory" loading="lazy" className="h-24 w-full object-contain" />
           </a>
           <a href={SITE_CONFIG.officialLinks.ieee} target="_blank" rel="noopener noreferrer" className="affiliation-logo" aria-label="IEEE official website">
-            <img src="/images/ieee-master-brand.png" alt="IEEE" loading="lazy" className="h-24 sm:h-28 w-full object-contain" />
+            <ChapterLogo loading="lazy" className="h-24 w-full" />
           </a>
           <a href={SITE_CONFIG.officialLinks.cass} target="_blank" rel="noopener noreferrer" className="affiliation-logo" aria-label="IEEE Circuits and Systems Society website">
             <img src="/images/ieee-cas-logo.png" alt="IEEE Circuits and Systems Society" loading="lazy" className="h-28 sm:h-32 w-full object-contain" />

@@ -65,6 +65,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({ item, items, onClose
               <div className="min-w-0">
                 <p className="eyebrow text-[11px]">IEEE CASS SBC IIT JAMMU</p>
                 <h2 id="gallery-item-title" className="mt-1 text-lg sm:text-xl font-bold leading-snug text-[#003366]">{item.eventGroup}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.altText ?? item.description}</p>
                 {item.date && <p className="mt-2 inline-flex items-center gap-2 text-sm text-slate-500"><Calendar className="h-4 w-4 text-sky-700" />{item.date}</p>}
               </div>
               <span className="metadata-badge shrink-0 text-xs">{item.chipSubtitle}</span>

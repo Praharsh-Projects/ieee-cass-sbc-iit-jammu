@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { ShieldCheck, Users, History, Lock, GraduationCap } from 'lucide-react';
 import { SectionHeader } from '../components/SectionHeader';
 import { MemberCard } from '../components/MemberCard';
-import { FacultyProfileModal } from '../components/FacultyProfileModal';
-import { FACULTY_ADVISOR, FACULTY_CO_ADVISOR, CURRENT_STUDENT_OFFICERS, CURRENT_STUDENT_SUPPORT, PAST_CHAPTER_LEADERS } from '../data/members';
+import { MemberProfileModal } from '../components/MemberProfileModal';
+import { FACULTY_MEMBERS, CURRENT_STUDENT_OFFICERS, CURRENT_STUDENT_SUPPORT, PAST_CHAPTER_LEADERS } from '../data/members';
 import { ChapterMember } from '../types';
 import { SITE_CONFIG } from '../data/site';
 
 export const MembersPage: React.FC = () => {
-  const [selectedFaculty, setSelectedFaculty] = useState<ChapterMember | null>(null);
+  const [selectedMember, setSelectedMember] = useState<ChapterMember | null>(null);
 
   return (
     <>
@@ -17,7 +17,7 @@ export const MembersPage: React.FC = () => {
           level="h1"
           badge="EXECUTIVE LEADERSHIP"
           title="Chapter Leadership &amp; Members"
-          subtitle="Meet the faculty advisors and student executive committee of the IEEE Circuits and Systems Society Student Branch Chapter at IIT Jammu."
+          subtitle="Meet the faculty mentors and student executive committee of the IEEE Circuits and Systems Society Student Branch Chapter at IIT Jammu."
         />
 
         <section aria-labelledby="current-leadership-heading" className="space-y-10">
@@ -36,8 +36,8 @@ export const MembersPage: React.FC = () => {
             </div>
             <p className="max-w-3xl text-sm leading-relaxed text-slate-600">Select a faculty profile for background, experience, and recognition details.</p>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              {[FACULTY_ADVISOR, FACULTY_CO_ADVISOR].map((faculty) => (
-                <MemberCard key={faculty.id} member={faculty} isFaculty onSelect={setSelectedFaculty} />
+              {FACULTY_MEMBERS.map((faculty) => (
+                <MemberCard key={faculty.id} member={faculty} isFaculty onSelect={setSelectedMember} />
               ))}
             </div>
           </section>
@@ -47,9 +47,10 @@ export const MembersPage: React.FC = () => {
               <Users className="h-4 w-4 text-sky-600" />
               <h3 id="student-board-heading">Student Executive Board</h3>
             </div>
+            <p className="max-w-3xl text-sm leading-relaxed text-slate-600">Select a student officer to explore their research and experience.</p>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {CURRENT_STUDENT_OFFICERS.map((officer) => (
-                <MemberCard key={officer.id} member={officer} />
+                <MemberCard key={officer.id} member={officer} onSelect={setSelectedMember} />
               ))}
             </div>
           </section>
@@ -103,7 +104,7 @@ export const MembersPage: React.FC = () => {
           <p>Student officers are elected in accordance with IEEE Member and Geographic Activities (MGA) and IEEE CASS Student Branch Chapter bylaws. Contact links shown here were supplied for the chapter directory.</p>
         </aside>
       </div>
-      <FacultyProfileModal member={selectedFaculty} onClose={() => setSelectedFaculty(null)} />
+      <MemberProfileModal member={selectedMember} onClose={() => setSelectedMember(null)} />
     </>
   );
 };

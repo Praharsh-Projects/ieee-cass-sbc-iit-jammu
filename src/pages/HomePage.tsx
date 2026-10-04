@@ -4,8 +4,8 @@ import { Hero } from '../components/Hero';
 import { Statistics } from '../components/Statistics';
 import { SectionHeader } from '../components/SectionHeader';
 import { MemberCard } from '../components/MemberCard';
-import { FacultyProfileModal } from '../components/FacultyProfileModal';
-import { FACULTY_ADVISOR, FACULTY_CO_ADVISOR, CURRENT_STUDENT_OFFICERS } from '../data/members';
+import { MemberProfileModal } from '../components/MemberProfileModal';
+import { FACULTY_MEMBERS } from '../data/members';
 import { GALLERY_ITEMS } from '../data/gallery';
 import { SITE_CONFIG } from '../data/site';
 import { ChapterMember, NavPage } from '../types';
@@ -138,8 +138,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <span className="font-bold text-[#003366]">IIT Jammu (Jagti Campus)</span>
                 </div>
                 <div className="info-row">
-                  <span className="text-slate-500">Faculty Advisors:</span>
-                  <span className="font-bold text-slate-800">Dr. Ambika Prasad Shah · Dr. Anup Shukla</span>
+                  <span className="text-slate-500">Faculty Counsellor:</span>
+                  <span className="font-bold text-slate-800">Dr. Anup Shukla</span>
+                </div>
+                <div className="info-row">
+                  <span className="text-slate-500">Faculty Advisor:</span>
+                  <span className="font-bold text-slate-800">Dr. Ambika Prasad Shah</span>
                 </div>
                 <div className="info-row">
                   <span className="text-slate-500">Research Ecosystem:</span>
@@ -166,20 +170,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="SECTION E • LEADERSHIP PREVIEW"
-          title="Executive Mentorship &amp; Officers"
-          subtitle="Guided by faculty advisors and led by dedicated student researchers at IIT Jammu."
+          title="Faculty Leadership"
+          subtitle="Guided by our Faculty Counsellor and Faculty Advisor in the Department of Electrical Engineering."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {/* Faculty Advisor */}
-          <MemberCard member={FACULTY_ADVISOR} isFaculty onSelect={setSelectedFaculty} />
-          <MemberCard member={FACULTY_CO_ADVISOR} isFaculty onSelect={setSelectedFaculty} />
-          
-          {/* Student Chair */}
-          <MemberCard member={CURRENT_STUDENT_OFFICERS[0]} />
-
-          {/* Student Vice Chair */}
-          <MemberCard member={CURRENT_STUDENT_OFFICERS[1]} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {FACULTY_MEMBERS.map(member => <MemberCard key={member.id} member={member} isFaculty onSelect={setSelectedFaculty} />)}
         </div>
 
         <div className="text-center mt-8">
@@ -284,7 +280,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      <FacultyProfileModal member={selectedFaculty} onClose={() => setSelectedFaculty(null)} />
+      <MemberProfileModal member={selectedFaculty} onClose={() => setSelectedFaculty(null)} />
     </div>
   );
 };

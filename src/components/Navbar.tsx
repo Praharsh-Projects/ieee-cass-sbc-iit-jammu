@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { NavPage } from '../types';
+import { ChapterLogo } from './ChapterLogo';
 
 interface NavbarProps {
   activeTab: NavPage;
@@ -49,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
     <header className={'site-header ' + (scrolled ? 'site-header-scrolled' : '')}>
       <div className="site-container flex items-center justify-between gap-6 h-20">
         <button onClick={() => handleNavClick('home')} className="shrink-0 rounded-md" aria-label="IEEE IIT Jammu Home">
-          <img src="/images/ieee-iit-jammu-header.png" alt="IEEE Indian Institute of Technology Jammu" className="object-contain w-[146px] h-[52px] sm:w-[176px] sm:h-[62px]" decoding="async" />
+          <ChapterLogo className="header-chapter-logo" />
         </button>
         <nav className="hidden lg:flex items-center gap-1" aria-label="Primary navigation">
           {navItems.map((item) => (

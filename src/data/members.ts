@@ -1,4 +1,5 @@
 import { ChapterMember } from '../types';
+import { STUDENT_PROFILES } from './studentProfiles';
 
 export const FACULTY_ADVISOR: ChapterMember = {
   id: 'faculty-ambika',
@@ -12,7 +13,8 @@ export const FACULTY_ADVISOR: ChapterMember = {
   term: '2024 – Present',
   isCurrent: true,
   bio: 'Faculty Advisor, IEEE CASS Student Branch Chapter',
-  facultyProfile: {
+  portrait: { objectPosition: '50% 32%', scale: 1.08 },
+  profile: {
     introduction: 'Assistant Professor, Electrical Engineering Department · Faculty Advisor, IEEE CASS SBC',
     highlights: [
       { label: 'Background', detail: 'Ph.D. from IIT Indore; former postdoctoral fellow at TU Vienna, Austria.' },
@@ -24,10 +26,10 @@ export const FACULTY_ADVISOR: ChapterMember = {
   }
 };
 
-export const FACULTY_CO_ADVISOR: ChapterMember = {
+export const FACULTY_COUNSELLOR: ChapterMember = {
   id: 'faculty-anup',
   name: 'Dr. Anup Shukla',
-  position: 'Faculty Advisor',
+  position: 'Faculty Counsellor',
   roleType: 'Faculty',
   avatarInitials: 'AS',
   photoUrl: '/images/dr-anup-shukla.jpg',
@@ -35,9 +37,10 @@ export const FACULTY_CO_ADVISOR: ChapterMember = {
   email: 'anup.shukla@iitjammu.ac.in',
   term: '2024 – Present',
   isCurrent: true,
-  bio: 'Faculty Advisor, Department of Electrical Engineering',
-  facultyProfile: {
-    introduction: 'Associate Professor · Department of Electrical Engineering · Faculty Advisor, 2024–Present',
+  bio: 'Faculty Counsellor, Department of Electrical Engineering',
+  portrait: { objectPosition: '50% 8%', scale: 1.1, translateY: '7%' },
+  profile: {
+    introduction: 'Associate Professor · Department of Electrical Engineering · Faculty Counsellor, 2024–Present',
     highlights: [
       { label: 'Professional service', detail: 'Senior Member of IEEE; member of the IEEE Power & Energy Society and Industry Applications Society; IEEE Young Professionals.' },
       { label: 'Career', detail: 'Senior Project Engineer, Department of Electrical Engineering, IIT Kanpur (June–December 2016).' },
@@ -48,11 +51,15 @@ export const FACULTY_CO_ADVISOR: ChapterMember = {
   }
 };
 
+export const FACULTY_MEMBERS = [FACULTY_COUNSELLOR, FACULTY_ADVISOR];
+
 const currentTerm = 'Current Leadership';
 
 export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   {
     id: 'student-shivam',
+    profile: STUDENT_PROFILES['student-shivam'],
+    portrait: { objectPosition: '50% 42%', scale: 1.04 },
     name: 'Shivam Bhardwaj',
     position: 'Chair',
     roleType: 'Core Student Leadership',
@@ -67,6 +74,8 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   },
   {
     id: 'student-sachin',
+    profile: STUDENT_PROFILES['student-sachin'],
+    portrait: { objectPosition: '50% 26%', scale: 1.65, translateY: '15%' },
     name: 'Sachin Sharma',
     position: 'Vice Chair',
     roleType: 'Core Student Leadership',
@@ -81,6 +90,8 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   },
   {
     id: 'student-sandeep',
+    profile: STUDENT_PROFILES['student-sandeep'],
+    portrait: { objectPosition: '50% 35%' },
     name: 'Sandeep Kour',
     position: 'Secretary',
     roleType: 'Core Student Leadership',
@@ -95,6 +106,8 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   },
   {
     id: 'student-ubair',
+    profile: STUDENT_PROFILES['student-ubair'],
+    portrait: { objectPosition: '50% 32%' },
     name: 'Ubair Ali',
     position: 'Treasurer',
     roleType: 'Core Student Leadership',
@@ -109,6 +122,8 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
   },
   {
     id: 'student-sourabh',
+    profile: STUDENT_PROFILES['student-sourabh'],
+    portrait: { objectPosition: '50% 32%', scale: 1.12 },
     name: 'Sourabh Goswami',
     position: 'Webmaster',
     roleType: 'Core Student Leadership',
@@ -126,6 +141,7 @@ export const CURRENT_STUDENT_OFFICERS: ChapterMember[] = [
 export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   {
     id: 'support-harshith',
+    portrait: { objectPosition: '50% 36%' },
     name: 'Pulla Harshith',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -139,6 +155,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   },
   {
     id: 'support-yashaswi',
+    portrait: { objectPosition: '50% 30%' },
     name: 'Nalamwar Yashaswi',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -152,6 +169,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   },
   {
     id: 'support-rajan',
+    portrait: { objectPosition: '50% 30%' },
     name: 'Rajan Thakur',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -164,6 +182,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   },
   {
     id: 'support-pavan',
+    portrait: { objectPosition: '50% 35%' },
     name: 'Pavan Mandal',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -177,6 +196,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   },
   {
     id: 'support-vipin',
+    portrait: { objectPosition: '50% 30%' },
     name: 'Vipin Kumar Patel',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -190,6 +210,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
   },
   {
     id: 'support-lakshit',
+    portrait: { objectPosition: '50% 32%' },
     name: 'Lakshit Jain',
     position: 'Student Support',
     roleType: 'Core Student Leadership',
@@ -206,6 +227,7 @@ export const CURRENT_STUDENT_SUPPORT: ChapterMember[] = [
 export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
   {
     id: 'past-aryan',
+    portrait: { objectPosition: '50% 50%' },
     name: 'Aryan Kannaujiya',
     position: 'Chairperson',
     roleType: 'Core Student Leadership',
@@ -217,6 +239,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
   },
   {
     id: 'past-pankaj',
+    portrait: { objectPosition: '50% 50%' },
     name: 'Pankaj Lodhi',
     position: 'Vice-Chairperson',
     roleType: 'Core Student Leadership',
@@ -228,6 +251,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
   },
   {
     id: 'past-abhay-kumar',
+    portrait: { objectPosition: '50% 50%' },
     name: 'Abhay Kumar',
     position: 'Secretary',
     roleType: 'Core Student Leadership',
@@ -239,6 +263,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
   },
   {
     id: 'past-susmitha',
+    portrait: { objectPosition: '50% 50%' },
     name: 'Susmitha Ghanta',
     position: 'Treasurer',
     roleType: 'Core Student Leadership',
@@ -250,6 +275,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
   },
   {
     id: 'past-teedha',
+    portrait: { objectPosition: '50% 50%' },
     name: 'Teedha Hemanth Kumar',
     position: 'Webmaster',
     roleType: 'Core Student Leadership',
@@ -264,8 +290,7 @@ export const PAST_CHAPTER_LEADERS: ChapterMember[] = [
 export const PREVIOUS_OFFICERS: ChapterMember[] = [...PAST_CHAPTER_LEADERS];
 
 export const ALL_MEMBERS: ChapterMember[] = [
-  FACULTY_ADVISOR,
-  FACULTY_CO_ADVISOR,
+  ...FACULTY_MEMBERS,
   ...CURRENT_STUDENT_OFFICERS,
   ...CURRENT_STUDENT_SUPPORT,
   ...PREVIOUS_OFFICERS

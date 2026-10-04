@@ -54,10 +54,30 @@ export interface ChapterMember {
   photoUrl?: string;
   email?: string;
   linkedinUrl?: string;
-  facultyProfile?: {
-    introduction: string;
-    highlights: { label: string; detail: string }[];
+  portrait?: {
+    objectPosition: string;
+    scale?: number;
+    translateY?: string;
   };
+  profile?: {
+    introduction: string;
+    about?: string[];
+    interests?: string[];
+    highlights?: { label: string; detail: string }[];
+    experience?: {
+      role: string;
+      organization: string;
+      dates: string;
+      description?: string;
+    }[];
+  };
+}
+
+export interface GalleryAlbum {
+  id: string;
+  title: string;
+  date?: string;
+  photos: GalleryItem[];
 }
 
 export interface GalleryItem {
