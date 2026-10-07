@@ -126,7 +126,7 @@ export const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
           )}
 
           {/* Attendance Stats Breakdown */}
-          <div className="p-4 rounded-xl bg-white border border-sky-200 shadow-xs">
+          {event.attendance && <div className="p-4 rounded-xl bg-white border border-sky-200 shadow-xs">
             <span className="block text-xs font-sans text-slate-600 uppercase tracking-wider mb-2.5 font-bold flex items-center gap-1.5">
               <Users className="w-4 h-4 text-sky-600" />
               Attendance Participation
@@ -145,9 +145,9 @@ export const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
                 <span className="text-xl font-bold text-white font-sans">{event.attendance.total}</span>
               </div>
             </div>
-          </div>
+          </div>}
 
-          {/* Complete About Description (Exact Source Preserved) */}
+          {/* About the activity */}
           <div>
             <h3 className="text-sm uppercase tracking-wider text-slate-600 mb-2 font-semibold flex items-center gap-1.5">
               <Shield className="w-3.5 h-3.5 text-sky-600" />

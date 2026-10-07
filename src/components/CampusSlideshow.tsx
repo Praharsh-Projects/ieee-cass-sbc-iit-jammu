@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { CAMPUS_SLIDES } from '../data/campus';
-import { ChapterLogo } from './ChapterLogo';
 
 export const CampusSlideshow: React.FC = () => {
   const [index, setIndex] = useState(0);
@@ -53,13 +52,9 @@ export const CampusSlideshow: React.FC = () => {
     >
       {CAMPUS_SLIDES.map((slide, slideIndex) => (
         <div key={slide.image} className={`campus-slide ${index === slideIndex ? 'campus-slide-active' : ''}`} aria-hidden={index !== slideIndex} role="group" aria-roledescription="slide" aria-label={`${slideIndex + 1} of ${CAMPUS_SLIDES.length}`}>
-          <img src={slide.image} alt={slide.alt} className="campus-photo" style={{ objectPosition: slide.focalPoint }} fetchPriority={slideIndex === 0 ? 'high' : 'auto'} decoding="async" />
+          <img src={slide.image} alt={slide.alt} className="campus-photo" style={{ objectPosition: slide.focalPoint, objectFit: slide.fit ?? 'cover' }} fetchPriority={slideIndex === 0 ? 'high' : 'auto'} decoding="async" />
         </div>
       ))}
-      <div className="campus-banner-shade" aria-hidden="true" />
-      <a href="#" className="campus-logo-link" aria-label="IEEE Student Branch Chapter IIT Jammu — Home">
-        <ChapterLogo className="campus-banner-logo" />
-      </a>
       <button type="button" className="slideshow-arrow slideshow-arrow-left" aria-label="Previous campus slide" onClick={() => goTo(index - 1)}><ChevronLeft aria-hidden="true" /></button>
       <button type="button" className="slideshow-arrow slideshow-arrow-right" aria-label="Next campus slide" onClick={() => goTo(index + 1)}><ChevronRight aria-hidden="true" /></button>
       <div className="slideshow-controls">

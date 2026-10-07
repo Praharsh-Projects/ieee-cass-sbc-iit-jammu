@@ -19,7 +19,7 @@ export interface ChapterEvent {
   duration?: string;
   venue?: string;
   mode?: 'In-Person' | 'Online' | 'Hybrid';
-  attendance: {
+  attendance?: {
     ieee: number;
     nonIeee: number;
     total: number;

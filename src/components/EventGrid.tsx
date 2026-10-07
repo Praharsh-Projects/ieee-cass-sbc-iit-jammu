@@ -15,7 +15,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ events }) => {
   const [activeModalEvent, setActiveModalEvent] = useState<ChapterEvent | null>(null);
 
   const categories = ['All', 'AGM', 'Distinguished Lecture', 'Expert Talk', 'Workshop'];
-  const years = ['All', '2025', '2024'];
+  const years = ['All', ...[...new Set(events.map(event => event.year))].sort((a, b) => b - a).map(String)];
 
   const filteredAndSortedEvents = useMemo(() => {
     let result = [...events];
@@ -68,7 +68,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ events }) => {
             ))}
           </div>
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-1.5" role="group" aria-label="Filter by year">
+            <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Filter by year">
               <span className="mr-2 text-xs font-semibold text-slate-500">YEAR:</span>
               {years.map((year) => (
                 <button

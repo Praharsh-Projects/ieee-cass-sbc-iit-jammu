@@ -47,6 +47,18 @@ const eventPhotos: Record<string, { accentColor: string; photos: { file: string;
       { file: 'event-6-04.jpg', altText: 'Audience following the expert talk.' },
       { file: 'event-6-05.jpg', altText: 'The invited speaker receiving a certificate.' }
     ]
+  },
+  'event-7': {
+    accentColor: '#0284C7',
+    photos: [
+      { file: 'event-7-01.jpg', altText: 'Dr. Aryan Kannaujiya receiving a framed memento after the expert talk.' },
+      { file: 'event-7-02.jpg', altText: 'Chapter members and faculty gathered in front of the IEEE CASS presentation.' },
+      { file: 'event-7-03.jpg', altText: 'Speakers, faculty, and participants posing for a group photograph in the lecture hall.' },
+      { file: 'event-7-04.jpg', altText: 'Dr. Aryan Kannaujiya speaking beside the Radiation-Tolerant VLSI Circuits for Space Electronics event slide.' },
+      { file: 'event-7-05.jpg', altText: 'A presenter discussing circuit reliability with a projected technical slide.' },
+      { file: 'event-7-06.jpg', altText: 'A faculty member addressing participants beside the Event VII announcement slide.' },
+      { file: 'event-7-07.jpg', altText: 'Participants seated in the lecture hall during the expert talk.' }
+    ]
   }
 };
 

@@ -59,9 +59,11 @@ export const EventCard: React.FC<EventCardProps> = ({ event, onViewDetails }) =>
             <span className="text-xs text-slate-500 uppercase tracking-wide block font-semibold">
               {event.imagePlaceholder?.tag || 'IEEE CASS Session'}
             </span>
-            <span className="text-[11px] text-sky-700 font-sans font-bold">
-              Total Attendees: {event.attendance.total}
-            </span>
+            {event.attendance && (
+              <span className="text-[11px] text-sky-700 font-sans font-bold">
+                Total Attendees: {event.attendance.total}
+              </span>
+            )}
           </div>
         </div>
 

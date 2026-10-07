@@ -166,4 +166,25 @@ export const COMPLETED_EVENTS: ChapterEvent[] = [
       tag: 'AI Accelerators'
     }
   },
+  {
+    id: 'event-7',
+    number: 'EVENT VII',
+    title: 'Radiation-Tolerant VLSI Circuits for Space Electronics',
+    activityName: 'Radiation-Tolerant VLSI Circuits for Space Electronics',
+    date: 'September 25, 2026',
+    isoDate: '2026-09-25',
+    year: 2026,
+    time: '4:00 PM – 5:00 PM IST',
+    duration: '1 hour',
+    venue: 'Pushkar Block, IC-ResQ Lab, IIT Jammu',
+    mode: 'In-Person',
+    speaker: 'Dr. Aryan Kannaujiya, Project Research Scientist, IIT Bombay',
+    about: 'Dr. Aryan Kannaujiya presented an expert talk on radiation-tolerant VLSI circuits for space electronics. The session discussed the importance of circuit reliability in space applications and the need for VLSI designs that can operate in radiation environments. The programme also included a presentation on circuit reliability and an overview of IEEE Circuits and Systems Society goals, vision, mission, and membership.',
+    category: 'Expert Talk',
+    imagePlaceholder: {
+      gradient: 'from-sky-50 via-white to-blue-50',
+      icon: 'cpu',
+      tag: 'Space Electronics & Reliability'
+    }
+  },
 ];
