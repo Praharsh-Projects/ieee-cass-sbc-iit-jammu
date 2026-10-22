@@ -187,4 +187,40 @@ export const COMPLETED_EVENTS: ChapterEvent[] = [
       tag: 'Space Electronics & Reliability'
     }
   },
+  {
+    id: 'event-8',
+    number: 'EVENT VIII',
+    title: 'Meeting for Upcoming Events',
+    activityName: 'Meeting for Upcoming Events',
+    date: 'September 28, 2026',
+    isoDate: '2026-09-28',
+    year: 2026,
+    venue: 'Conference Hall, Pushkar Building, IIT Jammu',
+    mode: 'In-Person',
+    about: 'IEEE CASS Student Branch Chapter members met on September 28, 2026, to discuss upcoming chapter events. The meeting took place in the Conference Hall, Pushkar Building, IIT Jammu.',
+    category: 'Meeting',
+    imagePlaceholder: {
+      gradient: 'from-sky-50 via-white to-blue-50',
+      icon: 'users',
+      tag: 'Chapter Planning'
+    }
+  },
+  {
+    id: 'event-9',
+    number: 'EVENT IX',
+    title: 'IEEE Day Celebration',
+    activityName: 'IEEE Day Celebration',
+    date: 'October 6, 2026',
+    isoDate: '2026-10-06',
+    year: 2026,
+    venue: 'IC-ResQ Lab, Pushkar Building, IIT Jammu',
+    mode: 'In-Person',
+    about: 'Chapter members gathered at the IC-ResQ Lab, Pushkar Building, IIT Jammu, to celebrate IEEE Day on October 6, 2026.',
+    category: 'Celebration',
+    imagePlaceholder: {
+      gradient: 'from-sky-50 via-white to-blue-50',
+      icon: 'sparkles',
+      tag: 'IEEE Day & Chapter Community'
+    }
+  },
 ];

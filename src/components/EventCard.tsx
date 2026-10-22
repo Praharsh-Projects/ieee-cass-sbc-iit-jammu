@@ -109,10 +109,12 @@ export const EventCard: React.FC<EventCardProps> = ({ event, onViewDetails }) =>
         </div>
 
         {/* Card Action Footer */}
-        <div className="pt-3 border-t border-sky-100 flex items-center justify-between">
-          <span className="text-[11px] font-sans text-slate-500 font-medium">
-            {event.time}
-          </span>
+        <div className={`pt-3 border-t border-sky-100 flex items-center ${event.time ? 'justify-between' : 'justify-end'}`}>
+          {event.time && (
+            <span className="text-[11px] font-sans text-slate-500 font-medium">
+              {event.time}
+            </span>
+          )}
 
           <button
             onClick={() => onViewDetails(event)}

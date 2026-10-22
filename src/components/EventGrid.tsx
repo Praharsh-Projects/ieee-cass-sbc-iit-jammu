@@ -14,7 +14,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ events }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeModalEvent, setActiveModalEvent] = useState<ChapterEvent | null>(null);
 
-  const categories = ['All', 'AGM', 'Distinguished Lecture', 'Expert Talk', 'Workshop'];
+  const categories = ['All', ...new Set(events.map(event => event.category))];
   const years = ['All', ...[...new Set(events.map(event => event.year))].sort((a, b) => b - a).map(String)];
 
   const filteredAndSortedEvents = useMemo(() => {

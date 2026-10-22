@@ -1,6 +1,6 @@
 export type NavPage = 'home' | 'members' | 'events' | 'contact' | 'about-us' | 'gallery';
 
-export type EventType = 'AGM' | 'Distinguished Lecture' | 'Expert Talk' | 'Workshop';
+export type EventType = 'AGM' | 'Distinguished Lecture' | 'Expert Talk' | 'Workshop' | 'Meeting' | 'Celebration';
 
 export interface StudentBodyMember {
   position: string;
@@ -15,7 +15,7 @@ export interface ChapterEvent {
   date: string;
   isoDate: string; // for sorting
   year: number;
-  time: string;
+  time?: string;
   duration?: string;
   venue?: string;
   mode?: 'In-Person' | 'Online' | 'Hybrid';

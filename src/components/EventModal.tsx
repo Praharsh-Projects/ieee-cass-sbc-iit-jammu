@@ -67,7 +67,7 @@ export const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
           
           {/* Key Event Metadata Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            <div className="p-3.5 rounded-xl bg-sky-50/60 border border-sky-200 flex items-start gap-3">
+            <div className={`p-3.5 rounded-xl bg-sky-50/60 border border-sky-200 flex items-start gap-3 ${event.time ? '' : 'sm:col-span-2'}`}>
               <Calendar className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
               <div>
                 <span className="block text-xs font-sans text-slate-500 font-bold">DATE</span>
@@ -78,13 +78,15 @@ export const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
               </div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-sky-50/60 border border-sky-200 flex items-start gap-3">
-              <Clock className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
-              <div>
-                <span className="block text-xs font-sans text-slate-500 font-bold">TIME</span>
-                <span className="text-slate-900 font-semibold">{event.time}</span>
+            {event.time && (
+              <div className="p-3.5 rounded-xl bg-sky-50/60 border border-sky-200 flex items-start gap-3">
+                <Clock className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
+                <div>
+                  <span className="block text-xs font-sans text-slate-500 font-bold">TIME</span>
+                  <span className="text-slate-900 font-semibold">{event.time}</span>
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="p-3.5 rounded-xl bg-sky-50/60 border border-sky-200 flex items-start gap-3 sm:col-span-2">
               <MapPin className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />

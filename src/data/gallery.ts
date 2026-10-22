@@ -59,6 +59,23 @@ const eventPhotos: Record<string, { accentColor: string; photos: { file: string;
       { file: 'event-7-06.jpg', altText: 'A faculty member addressing participants beside the Event VII announcement slide.' },
       { file: 'event-7-07.jpg', altText: 'Participants seated in the lecture hall during the expert talk.' }
     ]
+  },
+  'event-8': {
+    accentColor: '#0284C7',
+    photos: [
+      { file: 'event-8-01.jpg', altText: 'Chapter members gathered around the conference table for the upcoming events meeting.' },
+      { file: 'event-8-02.jpg', altText: 'Members seated in the Conference Hall, Pushkar Building, during the chapter planning meeting.' }
+    ]
+  },
+  'event-9': {
+    accentColor: '#009FE3',
+    photos: [
+      { file: 'event-9-01.jpg', altText: 'Chapter members at workstations in the IC-ResQ Lab during the IEEE Day celebration.' },
+      { file: 'event-9-02.jpg', altText: 'A wide view of members gathered in the IC-ResQ Lab for IEEE Day.' },
+      { file: 'event-9-03.jpg', altText: 'Members posing together among the laboratory workstations during IEEE Day.' },
+      { file: 'event-9-04.jpg', altText: 'Chapter members posing with an IEEE Day banner in the IC-ResQ Lab.' },
+      { file: 'event-9-05.jpg', altText: 'A group photograph with the IEEE Day banner at IIT Jammu.' }
+    ]
   }
 };
 
